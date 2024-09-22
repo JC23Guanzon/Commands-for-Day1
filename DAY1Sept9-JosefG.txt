@@ -223,7 +223,7 @@ Ephone 1
   button 1:8 2:7 3:6 4:5
   restart
 Ephone 2
-  Mac-address CCD8.C1FB.1103
+  Mac-address DCA5.F43F.3B7F
   type 8945
   button 1:4 2:3 3:2 4:1
   restart  
