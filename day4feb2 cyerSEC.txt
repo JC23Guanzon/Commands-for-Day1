@@ -15,9 +15,10 @@ is 139/445/21 open?          is 23,53,2000 open ?
 
 how to attack 139/445? because you DONT have a firewall!
 
-net  use  \\10.k.1.10\ipc$  "attacks 139, and connects to it."
+net  use  \\10.21.1.10\ipc$  "attacks 139, and connects to it."
 "privilege escalation"
-net  use  s: \\10.k.1.10\c$  /user:administrator
+net use x: /delete
+net  use  s: \\10.21.1.10\c$  /user:administrator
 
 SERVICES VS PORTS:
 WEB SERVER RUNS ON PORT 80, IF YOUR CLASSMATE PORT 80 OPEN? IT IS A WEB SERVER!
@@ -37,9 +38,22 @@ FROM ENTERING YOUR NETWORK.
 step1: give Unlimited internet to EDGE:
 @edge
 CONFIG T
-IP ROUTE 0.0.0.0  0.0.0.0 200.0.0.1
+no logging console
+Int Gi 2
+no shut
+ip add 192.168.102.5 255.255.255.0
+@telnet use secureCRT: telnet 192.168.108.5
+conf t
+IP ROUTE 0.0.0.0  0.0.0.0 192.168.108.2
 ip name-server 8.8.8.8
 ip domain-lookup
+int gi 1
+no shut
+ip add 192.168.108.5 255.255.255.0
+int gi 3
+no shut
+ip add 192.168.103.5 255.255.255.0
+
 ALL THE PORN SITES THE WORLD ARE OWNED BY 5 COMPANIES:
 
 config t
